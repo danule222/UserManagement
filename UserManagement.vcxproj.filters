@@ -32,6 +32,9 @@
     <ClInclude Include="Functions.cpp">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="AddUserWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UserManagement.cpp">

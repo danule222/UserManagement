@@ -49,6 +49,13 @@ namespace UserManagement {
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmUsername;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmMail;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmCredits;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ name;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ birthdate;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ state;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ country;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ username;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ mail;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ credits;
 
 		private: System::ComponentModel::IContainer^ components;
 		protected:
@@ -60,7 +67,7 @@ namespace UserManagement {
 		/// Required designer variable.
 		/// </summary>
 
-		#pragma region Windows Form Designer generated code
+#pragma region Windows Form Designer generated code
 
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -76,75 +83,75 @@ namespace UserManagement {
 			this->btnModify = (gcnew System::Windows::Forms::Button());
 			this->btnCredits = (gcnew System::Windows::Forms::Button());
 			this->tblUsers = (gcnew System::Windows::Forms::DataGridView());
+			this->name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->birthdate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->state = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->country = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->username = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->mail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->credits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->ayudaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->clmName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->clmBirthdate = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->clmState = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->clmCountry = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->clmUsername = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->clmMail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->clmCredits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoGravitar))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tblUsers))->BeginInit();
 			this->contextMenuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// pictureBox1
+			// logoGravitar
 			// 
-			this->logoGravitar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->logoGravitar->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"logoGravitar.Image")));
 			this->logoGravitar->Location = System::Drawing::Point(12, 12);
-			this->logoGravitar->Name = L"pictureBox1";
+			this->logoGravitar->Name = L"logoGravitar";
 			this->logoGravitar->Size = System::Drawing::Size(171, 60);
 			this->logoGravitar->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->logoGravitar->TabIndex = 0;
 			this->logoGravitar->TabStop = false;
 			// 
-			// button1
+			// btnAdd
 			// 
 			this->btnAdd->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->btnAdd->Location = System::Drawing::Point(767, 29);
-			this->btnAdd->Name = L"button1";
+			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(70, 23);
 			this->btnAdd->TabIndex = 1;
 			this->btnAdd->Text = L"Añadir";
 			this->btnAdd->UseVisualStyleBackColor = true;
 			this->btnAdd->Click += gcnew System::EventHandler(this, &MainWindow::btnAdd_Click);
 			// 
-			// button2
+			// btnRemove
 			// 
 			this->btnRemove->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->btnRemove->Location = System::Drawing::Point(691, 29);
-			this->btnRemove->Name = L"button2";
+			this->btnRemove->Name = L"btnRemove";
 			this->btnRemove->Size = System::Drawing::Size(70, 23);
 			this->btnRemove->TabIndex = 2;
 			this->btnRemove->Text = L"Eliminar";
 			this->btnRemove->UseVisualStyleBackColor = true;
 			this->btnRemove->Click += gcnew System::EventHandler(this, &MainWindow::btnRemove_Click);
 			// 
-			// button3
+			// btnModify
 			// 
 			this->btnModify->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->btnModify->Location = System::Drawing::Point(615, 29);
-			this->btnModify->Name = L"button3";
+			this->btnModify->Name = L"btnModify";
 			this->btnModify->Size = System::Drawing::Size(70, 23);
 			this->btnModify->TabIndex = 3;
 			this->btnModify->Text = L"Modificar";
 			this->btnModify->UseVisualStyleBackColor = true;
 			this->btnModify->Click += gcnew System::EventHandler(this, &MainWindow::btnModify_Click);
 			// 
-			// button4
+			// btnCredits
 			// 
 			this->btnCredits->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->btnCredits->Location = System::Drawing::Point(539, 29);
-			this->btnCredits->Name = L"button4";
+			this->btnCredits->Name = L"btnCredits";
 			this->btnCredits->Size = System::Drawing::Size(70, 23);
 			this->btnCredits->TabIndex = 4;
 			this->btnCredits->Text = L"Créditos";
 			this->btnCredits->UseVisualStyleBackColor = true;
 			this->btnCredits->Click += gcnew System::EventHandler(this, &MainWindow::btnCredits_Click);
 			// 
-			// dataGridView1
+			// tblUsers
 			// 
 			this->tblUsers->AllowUserToAddRows = false;
 			this->tblUsers->AllowUserToDeleteRows = false;
@@ -155,15 +162,57 @@ namespace UserManagement {
 			this->tblUsers->BackgroundColor = System::Drawing::Color::Gainsboro;
 			this->tblUsers->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tblUsers->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
-				this->clmName, this->clmBirthdate,
-					this->clmState, this->clmCountry, this->clmUsername, this->clmMail, this->clmCredits
+				this->name, this->birthdate,
+					this->state, this->country, this->username, this->mail, this->credits
 			});
 			this->tblUsers->Location = System::Drawing::Point(12, 85);
-			this->tblUsers->Name = L"dataGridView1";
+			this->tblUsers->Name = L"tblUsers";
 			this->tblUsers->ReadOnly = true;
 			this->tblUsers->Size = System::Drawing::Size(825, 417);
 			this->tblUsers->TabIndex = 5;
 			this->tblUsers->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MainWindow::tblUsers_CellContentClick);
+			// 
+			// name
+			// 
+			this->name->HeaderText = L"Nombre";
+			this->name->Name = L"name";
+			this->name->ReadOnly = true;
+			// 
+			// birthdate
+			// 
+			this->birthdate->HeaderText = L"Fecha de nacimiento";
+			this->birthdate->Name = L"birthdate";
+			this->birthdate->ReadOnly = true;
+			// 
+			// state
+			// 
+			this->state->HeaderText = L"Provincia";
+			this->state->Name = L"state";
+			this->state->ReadOnly = true;
+			// 
+			// country
+			// 
+			this->country->HeaderText = L"País";
+			this->country->Name = L"country";
+			this->country->ReadOnly = true;
+			// 
+			// username
+			// 
+			this->username->HeaderText = L"Usuario";
+			this->username->Name = L"username";
+			this->username->ReadOnly = true;
+			// 
+			// mail
+			// 
+			this->mail->HeaderText = L"Correo";
+			this->mail->Name = L"mail";
+			this->mail->ReadOnly = true;
+			// 
+			// credits
+			// 
+			this->credits->HeaderText = L"Créditos";
+			this->credits->Name = L"credits";
+			this->credits->ReadOnly = true;
 			// 
 			// contextMenuStrip1
 			// 
@@ -177,52 +226,12 @@ namespace UserManagement {
 			this->ayudaToolStripMenuItem->Size = System::Drawing::Size(108, 22);
 			this->ayudaToolStripMenuItem->Text = L"Ayuda";
 			// 
-			// name
-			// 
-			this->clmName->HeaderText = L"Nombre";
-			this->clmName->Name = L"name";
-			this->clmName->ReadOnly = true;
-			// 
-			// birthdate
-			// 
-			this->clmBirthdate->HeaderText = L"Fecha de nacimiento";
-			this->clmBirthdate->Name = L"birthdate";
-			this->clmBirthdate->ReadOnly = true;
-			// 
-			// state
-			// 
-			this->clmState->HeaderText = L"Provincia";
-			this->clmState->Name = L"state";
-			this->clmState->ReadOnly = true;
-			// 
-			// country
-			// 
-			this->clmCountry->HeaderText = L"País";
-			this->clmCountry->Name = L"country";
-			this->clmCountry->ReadOnly = true;
-			// 
-			// username
-			// 
-			this->clmUsername->HeaderText = L"Usuario";
-			this->clmUsername->Name = L"username";
-			this->clmUsername->ReadOnly = true;
-			// 
-			// mail
-			// 
-			this->clmMail->HeaderText = L"Correo";
-			this->clmMail->Name = L"mail";
-			this->clmMail->ReadOnly = true;
-			// 
-			// credits
-			// 
-			this->clmCredits->HeaderText = L"Créditos";
-			this->clmCredits->Name = L"credits";
-			this->clmCredits->ReadOnly = true;
-			// 
-			// Form1
+			// MainWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
+				static_cast<System::Int32>(static_cast<System::Byte>(249)));
 			this->ClientSize = System::Drawing::Size(849, 514);
 			this->Controls->Add(this->tblUsers);
 			this->Controls->Add(this->btnCredits);
@@ -231,7 +240,7 @@ namespace UserManagement {
 			this->Controls->Add(this->btnAdd);
 			this->Controls->Add(this->logoGravitar);
 			this->MinimumSize = System::Drawing::Size(517, 235);
-			this->Name = L"Form1";
+			this->Name = L"MainWindow";
 			this->Text = L"Gestión de usuarios";
 			this->Load += gcnew System::EventHandler(this, &MainWindow::LoadTableData);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoGravitar))->EndInit();
@@ -253,7 +262,8 @@ namespace UserManagement {
 			}
 		}
 		private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
-			
+			AddUserWindow^ aUW = gcnew AddUserWindow();
+			aUW->ShowDialog();
 		}
 		private: System::Void btnRemove_Click(System::Object^ sender, System::EventArgs^ e) {
 			if (tblUsers->Rows->Count > 0) {
