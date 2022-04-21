@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <vector>
 
+using namespace System;
+using namespace System::Runtime::InteropServices;
+
 #define FILENAME "users.dat"
 
 namespace FileFunctions {
@@ -66,7 +69,6 @@ namespace FileFunctions {
         else
         {
             fclose(f);
-            printf("\nSe ha/n encontrado %d contacto/s.\n", GetLastID() - 1);
         }
     }
 
@@ -93,10 +95,32 @@ namespace FileFunctions {
             fwrite(&newContact, sizeof(newContact), 1, f);
             fclose(f);
         }
-        else
-        {
-            printf("La lista de contactos está llena.\n");
-        }
+    }
+
+    void AddUser(String^ name, String^ birthdate, String^ state,
+        String^ country, String^ username, String^ password,
+        String^ mail, String^ credits)
+    {
+        char* nameC = (char*)Marshal::StringToHGlobalAnsi(name).ToPointer();
+        char* birthdateC = (char*)Marshal::StringToHGlobalAnsi(birthdate).ToPointer();
+        char* stateC = (char*)Marshal::StringToHGlobalAnsi(state).ToPointer();
+        char* countryC = (char*)Marshal::StringToHGlobalAnsi(country).ToPointer();
+        char* usernameC = (char*)Marshal::StringToHGlobalAnsi(username).ToPointer();
+        char* passwordC = (char*)Marshal::StringToHGlobalAnsi(password).ToPointer();
+        char* mailC = (char*)Marshal::StringToHGlobalAnsi(mail).ToPointer();
+        char* creditsC = (char*)Marshal::StringToHGlobalAnsi(credits).ToPointer();
+        
+        AddUser(nameC, birthdateC, stateC, countryC, usernameC, passwordC,
+            mailC, creditsC);
+
+        Marshal::FreeHGlobal((IntPtr)nameC);
+        Marshal::FreeHGlobal((IntPtr)birthdateC);
+        Marshal::FreeHGlobal((IntPtr)stateC);
+        Marshal::FreeHGlobal((IntPtr)countryC);
+        Marshal::FreeHGlobal((IntPtr)usernameC);
+        Marshal::FreeHGlobal((IntPtr)passwordC);
+        Marshal::FreeHGlobal((IntPtr)mailC);
+        Marshal::FreeHGlobal((IntPtr)creditsC);
     }
 
     void RemoveUser(int id)

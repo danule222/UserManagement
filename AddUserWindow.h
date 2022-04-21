@@ -16,10 +16,6 @@ namespace UserManagement {
 			AddUserWindow(void)
 			{
 				InitializeComponent();
-				//FileFunctions::MakeFile(); // RESETS FILE
-				/*FileFunctions::AddUser("Ovo", "02/03/1966", "Valencia", "España", "Ovo22", "awawaw", "ovo@gmail.com", "1");
-				FileFunctions::AddUser("Ovo", "02/03/1966", "Valencia", "España", "Ovo22", "awawaw", "ovo@gmail.com", "1");
-				FileFunctions::AddUser("Ovo", "02/03/1966", "Valencia", "España", "Ovo22", "awawaw", "ovo@gmail.com", "1");*/
 			}
 
 		protected:
@@ -33,6 +29,26 @@ namespace UserManagement {
 					delete components;
 				}
 			}
+	private: System::Windows::Forms::PictureBox^ imgDecorator;
+	protected:
+
+
+
+
+		private: System::Windows::Forms::TextBox^ fldName;
+		private: System::Windows::Forms::TextBox^ fldState;
+		private: System::Windows::Forms::DateTimePicker^ dtpBirthdate;
+		private: System::Windows::Forms::TextBox^ fldCountry;
+		private: System::Windows::Forms::TextBox^ fldUsername;
+		private: System::Windows::Forms::TextBox^ fldPassword;
+		private: System::Windows::Forms::TextBox^ fldMail;
+	private: System::Windows::Forms::Label^ lblName;
+	private: System::Windows::Forms::Label^ lblBirthdate;
+	private: System::Windows::Forms::Label^ lblState;
+	private: System::Windows::Forms::Label^ lblCountry;
+	private: System::Windows::Forms::Label^ lblUsername;
+	private: System::Windows::Forms::Label^ lblPassword;
+	private: System::Windows::Forms::Label^ lblMail;
 
 
 
@@ -40,34 +56,8 @@ namespace UserManagement {
 
 
 
-		private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
-		private: System::Windows::Forms::ToolStripMenuItem^ ayudaToolStripMenuItem;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmName;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmBirthdate;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmState;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmCountry;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmUsername;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmMail;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmCredits;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBox6;
-
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
-
+		private: System::Windows::Forms::Button^ btnCancel;
+		private: System::Windows::Forms::Button^ btnSave;
 		private: System::ComponentModel::IContainer^ components;
 		protected:
 
@@ -86,191 +76,177 @@ namespace UserManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AddUserWindow::typeid));
-			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
-			this->ayudaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->contextMenuStrip1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->imgDecorator = (gcnew System::Windows::Forms::PictureBox());
+			this->fldName = (gcnew System::Windows::Forms::TextBox());
+			this->lblName = (gcnew System::Windows::Forms::Label());
+			this->lblBirthdate = (gcnew System::Windows::Forms::Label());
+			this->lblState = (gcnew System::Windows::Forms::Label());
+			this->dtpBirthdate = (gcnew System::Windows::Forms::DateTimePicker());
+			this->fldState = (gcnew System::Windows::Forms::TextBox());
+			this->lblCountry = (gcnew System::Windows::Forms::Label());
+			this->fldCountry = (gcnew System::Windows::Forms::TextBox());
+			this->lblUsername = (gcnew System::Windows::Forms::Label());
+			this->fldUsername = (gcnew System::Windows::Forms::TextBox());
+			this->lblPassword = (gcnew System::Windows::Forms::Label());
+			this->fldPassword = (gcnew System::Windows::Forms::TextBox());
+			this->lblMail = (gcnew System::Windows::Forms::Label());
+			this->fldMail = (gcnew System::Windows::Forms::TextBox());
+			this->btnCancel = (gcnew System::Windows::Forms::Button());
+			this->btnSave = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDecorator))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// contextMenuStrip1
+			// imgDecorator
 			// 
-			this->contextMenuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ayudaToolStripMenuItem });
-			this->contextMenuStrip1->Name = L"contextMenuStrip1";
-			this->contextMenuStrip1->Size = System::Drawing::Size(109, 26);
+			this->imgDecorator->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->imgDecorator->BackColor = System::Drawing::Color::Transparent;
+			this->imgDecorator->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgDecorator.Image")));
+			this->imgDecorator->Location = System::Drawing::Point(0, 0);
+			this->imgDecorator->Name = L"imgDecorator";
+			this->imgDecorator->Size = System::Drawing::Size(278, 308);
+			this->imgDecorator->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgDecorator->TabIndex = 1;
+			this->imgDecorator->TabStop = false;
 			// 
-			// ayudaToolStripMenuItem
+			// fldName
 			// 
-			this->ayudaToolStripMenuItem->Name = L"ayudaToolStripMenuItem";
-			this->ayudaToolStripMenuItem->Size = System::Drawing::Size(108, 22);
-			this->ayudaToolStripMenuItem->Text = L"Ayuda";
+			this->fldName->Location = System::Drawing::Point(397, 12);
+			this->fldName->Name = L"fldName";
+			this->fldName->Size = System::Drawing::Size(139, 20);
+			this->fldName->TabIndex = 1;
+			this->fldName->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::fldName_TextChanged);
 			// 
-			// pictureBox1
+			// lblName
 			// 
-			this->pictureBox1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
-			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 0);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(278, 308);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 1;
-			this->pictureBox1->TabStop = false;
+			this->lblName->AutoSize = true;
+			this->lblName->Location = System::Drawing::Point(285, 15);
+			this->lblName->Name = L"lblName";
+			this->lblName->Size = System::Drawing::Size(96, 13);
+			this->lblName->TabIndex = 3;
+			this->lblName->Text = L"Nombre y apellidos";
+			this->lblName->Click += gcnew System::EventHandler(this, &AddUserWindow::label1_Click);
 			// 
-			// textBox1
+			// lblBirthdate
 			// 
-			this->textBox1->Location = System::Drawing::Point(397, 12);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(139, 20);
-			this->textBox1->TabIndex = 1;
+			this->lblBirthdate->AutoSize = true;
+			this->lblBirthdate->Location = System::Drawing::Point(285, 41);
+			this->lblBirthdate->Name = L"lblBirthdate";
+			this->lblBirthdate->Size = System::Drawing::Size(106, 13);
+			this->lblBirthdate->TabIndex = 5;
+			this->lblBirthdate->Text = L"Fecha de nacimiento";
 			// 
-			// label1
+			// lblState
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(285, 15);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(96, 13);
-			this->label1->TabIndex = 3;
-			this->label1->Text = L"Nombre y apellidos";
-			this->label1->Click += gcnew System::EventHandler(this, &AddUserWindow::label1_Click);
+			this->lblState->AutoSize = true;
+			this->lblState->Location = System::Drawing::Point(285, 67);
+			this->lblState->Name = L"lblState";
+			this->lblState->Size = System::Drawing::Size(51, 13);
+			this->lblState->TabIndex = 7;
+			this->lblState->Text = L"Provincia";
 			// 
-			// label2
+			// dtpBirthdate
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(285, 41);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(106, 13);
-			this->label2->TabIndex = 5;
-			this->label2->Text = L"Fecha de nacimiento";
+			this->dtpBirthdate->Format = System::Windows::Forms::DateTimePickerFormat::Short;
+			this->dtpBirthdate->Location = System::Drawing::Point(397, 39);
+			this->dtpBirthdate->Name = L"dtpBirthdate";
+			this->dtpBirthdate->Size = System::Drawing::Size(139, 20);
+			this->dtpBirthdate->TabIndex = 2;
+			this->dtpBirthdate->ValueChanged += gcnew System::EventHandler(this, &AddUserWindow::dateTimePicker1_ValueChanged);
 			// 
-			// label3
+			// fldState
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(285, 67);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(51, 13);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"Provincia";
+			this->fldState->Location = System::Drawing::Point(397, 64);
+			this->fldState->Name = L"fldState";
+			this->fldState->Size = System::Drawing::Size(139, 20);
+			this->fldState->TabIndex = 3;
+			this->fldState->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::textBox3_TextChanged);
 			// 
-			// dateTimePicker1
+			// lblCountry
 			// 
-			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Short;
-			this->dateTimePicker1->Location = System::Drawing::Point(397, 39);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(139, 20);
-			this->dateTimePicker1->TabIndex = 2;
-			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &AddUserWindow::dateTimePicker1_ValueChanged);
+			this->lblCountry->AutoSize = true;
+			this->lblCountry->Location = System::Drawing::Point(285, 93);
+			this->lblCountry->Name = L"lblCountry";
+			this->lblCountry->Size = System::Drawing::Size(29, 13);
+			this->lblCountry->TabIndex = 10;
+			this->lblCountry->Text = L"País";
+			this->lblCountry->Click += gcnew System::EventHandler(this, &AddUserWindow::label4_Click);
 			// 
-			// textBox3
+			// fldCountry
 			// 
-			this->textBox3->Location = System::Drawing::Point(397, 64);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(139, 20);
-			this->textBox3->TabIndex = 3;
-			this->textBox3->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::textBox3_TextChanged);
+			this->fldCountry->Location = System::Drawing::Point(397, 90);
+			this->fldCountry->Name = L"fldCountry";
+			this->fldCountry->Size = System::Drawing::Size(139, 20);
+			this->fldCountry->TabIndex = 4;
+			this->fldCountry->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::textBox2_TextChanged);
 			// 
-			// label4
+			// lblUsername
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(285, 93);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(29, 13);
-			this->label4->TabIndex = 10;
-			this->label4->Text = L"País";
-			this->label4->Click += gcnew System::EventHandler(this, &AddUserWindow::label4_Click);
+			this->lblUsername->AutoSize = true;
+			this->lblUsername->Location = System::Drawing::Point(285, 119);
+			this->lblUsername->Name = L"lblUsername";
+			this->lblUsername->Size = System::Drawing::Size(96, 13);
+			this->lblUsername->TabIndex = 12;
+			this->lblUsername->Text = L"Nombre de usuario";
 			// 
-			// textBox2
+			// fldUsername
 			// 
-			this->textBox2->Location = System::Drawing::Point(397, 90);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(139, 20);
-			this->textBox2->TabIndex = 4;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::textBox2_TextChanged);
+			this->fldUsername->Location = System::Drawing::Point(397, 116);
+			this->fldUsername->Name = L"fldUsername";
+			this->fldUsername->Size = System::Drawing::Size(139, 20);
+			this->fldUsername->TabIndex = 5;
 			// 
-			// label5
+			// lblPassword
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(285, 119);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(96, 13);
-			this->label5->TabIndex = 12;
-			this->label5->Text = L"Nombre de usuario";
+			this->lblPassword->AutoSize = true;
+			this->lblPassword->Location = System::Drawing::Point(285, 145);
+			this->lblPassword->Name = L"lblPassword";
+			this->lblPassword->Size = System::Drawing::Size(61, 13);
+			this->lblPassword->TabIndex = 14;
+			this->lblPassword->Text = L"Contraseña";
 			// 
-			// textBox4
+			// fldPassword
 			// 
-			this->textBox4->Location = System::Drawing::Point(397, 116);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(139, 20);
-			this->textBox4->TabIndex = 5;
+			this->fldPassword->Location = System::Drawing::Point(397, 142);
+			this->fldPassword->Name = L"fldPassword";
+			this->fldPassword->Size = System::Drawing::Size(139, 20);
+			this->fldPassword->TabIndex = 6;
 			// 
-			// label6
+			// lblMail
 			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(285, 145);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(61, 13);
-			this->label6->TabIndex = 14;
-			this->label6->Text = L"Contraseña";
+			this->lblMail->AutoSize = true;
+			this->lblMail->Location = System::Drawing::Point(285, 171);
+			this->lblMail->Name = L"lblMail";
+			this->lblMail->Size = System::Drawing::Size(38, 13);
+			this->lblMail->TabIndex = 16;
+			this->lblMail->Text = L"Correo";
 			// 
-			// textBox5
+			// fldMail
 			// 
-			this->textBox5->Location = System::Drawing::Point(397, 142);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(139, 20);
-			this->textBox5->TabIndex = 6;
+			this->fldMail->Location = System::Drawing::Point(397, 168);
+			this->fldMail->Name = L"fldMail";
+			this->fldMail->Size = System::Drawing::Size(139, 20);
+			this->fldMail->TabIndex = 7;
 			// 
-			// label7
+			// btnCancel
 			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(285, 171);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(38, 13);
-			this->label7->TabIndex = 16;
-			this->label7->Text = L"Correo";
+			this->btnCancel->Location = System::Drawing::Point(461, 273);
+			this->btnCancel->Name = L"btnCancel";
+			this->btnCancel->Size = System::Drawing::Size(75, 23);
+			this->btnCancel->TabIndex = 9;
+			this->btnCancel->Text = L"Cancelar";
+			this->btnCancel->UseVisualStyleBackColor = true;
+			this->btnCancel->Click += gcnew System::EventHandler(this, &AddUserWindow::button2_Click);
 			// 
-			// textBox6
+			// btnSave
 			// 
-			this->textBox6->Location = System::Drawing::Point(397, 168);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(139, 20);
-			this->textBox6->TabIndex = 7;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(461, 273);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 9;
-			this->button2->Text = L"Cancelar";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &AddUserWindow::button2_Click);
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(380, 273);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 8;
-			this->button1->Text = L"Guardar";
-			this->button1->UseVisualStyleBackColor = true;
+			this->btnSave->Location = System::Drawing::Point(380, 273);
+			this->btnSave->Name = L"btnSave";
+			this->btnSave->Size = System::Drawing::Size(75, 23);
+			this->btnSave->TabIndex = 8;
+			this->btnSave->Text = L"Guardar";
+			this->btnSave->UseVisualStyleBackColor = true;
+			this->btnSave->Click += gcnew System::EventHandler(this, &AddUserWindow::btnSave_Click);
 			// 
 			// AddUserWindow
 			// 
@@ -279,31 +255,30 @@ namespace UserManagement {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
 			this->ClientSize = System::Drawing::Size(548, 308);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->dateTimePicker1);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->btnSave);
+			this->Controls->Add(this->btnCancel);
+			this->Controls->Add(this->lblMail);
+			this->Controls->Add(this->fldMail);
+			this->Controls->Add(this->lblPassword);
+			this->Controls->Add(this->fldPassword);
+			this->Controls->Add(this->lblUsername);
+			this->Controls->Add(this->fldUsername);
+			this->Controls->Add(this->lblCountry);
+			this->Controls->Add(this->fldCountry);
+			this->Controls->Add(this->dtpBirthdate);
+			this->Controls->Add(this->lblState);
+			this->Controls->Add(this->fldState);
+			this->Controls->Add(this->lblBirthdate);
+			this->Controls->Add(this->lblName);
+			this->Controls->Add(this->fldName);
+			this->Controls->Add(this->imgDecorator);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MinimumSize = System::Drawing::Size(16, 347);
 			this->Name = L"AddUserWindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Añadir usuario";
 			this->Load += gcnew System::EventHandler(this, &AddUserWindow::LoadTableData);
-			this->contextMenuStrip1->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDecorator))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -325,6 +300,18 @@ namespace UserManagement {
 		private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		}
 		private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+			this->Close();
+		}
+		private: System::Void fldName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void btnSave_Click(System::Object^ sender, System::EventArgs^ e) {
+			int actualUsers = FileFunctions::GetTotalOfUsers();
+			FileFunctions::AddUser(fldName->Text, dtpBirthdate->Text, fldState->Text, fldCountry->Text,
+				fldUsername->Text, fldPassword->Text, fldMail->Text, "10");
+			if (actualUsers < FileFunctions::GetTotalOfUsers())
+				MessageBox::Show("Usuario añadido correctamente.");
+			else
+				MessageBox::Show("Se produjo un error al añadir el usuario.");
 			this->Close();
 		}
 	};
