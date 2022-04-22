@@ -226,6 +226,7 @@ namespace UserManagement {
 			this->Controls->Add(this->btnRemove);
 			this->Controls->Add(this->btnAdd);
 			this->Controls->Add(this->logoGravitar);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MinimumSize = System::Drawing::Size(517, 235);
 			this->Name = L"MainWindow";
 			this->Text = L"Gestión de usuarios";

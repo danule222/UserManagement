@@ -272,6 +272,7 @@ namespace UserManagement {
 			this->Controls->Add(this->fldName);
 			this->Controls->Add(this->imgDecorator);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MinimumSize = System::Drawing::Size(16, 347);
 			this->Name = L"ModifyUserWindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;

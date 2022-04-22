@@ -120,6 +120,7 @@ namespace UserManagement {
 			this->Controls->Add(this->btnSave);
 			this->Controls->Add(this->btnCancel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"ModifyCreditsWindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Modificar créditos";
