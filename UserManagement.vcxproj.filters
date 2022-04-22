@@ -29,10 +29,16 @@
     <ClInclude Include="MainWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Functions.cpp">
+    <ClInclude Include="FileFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="AddUserWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModifyUserWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModifyCreditsWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

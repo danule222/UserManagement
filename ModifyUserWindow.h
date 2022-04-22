@@ -10,60 +10,53 @@ namespace UserManagement {
 	/// <summary>
 	/// Summary for Form1
 	/// </summary>
-	public ref class AddUserWindow : public System::Windows::Forms::Form
+	public ref class ModifyUserWindow : public System::Windows::Forms::Form
 	{
+		private: int userId;
 		public:
-			AddUserWindow(void)
+			ModifyUserWindow(void)
 			{
 				InitializeComponent();
+			}
+		public:
+			void SetUserId(int id)
+			{
+				userId = id;
 			}
 
 		protected:
 			/// <summary>
 			/// Clean up any resources being used.
 			/// </summary>
-			~AddUserWindow()
+			~ModifyUserWindow()
 			{
 				if (components)
 				{
 					delete components;
 				}
 			}
-	private: System::Windows::Forms::PictureBox^ imgDecorator;
-	protected:
-
-
-
-
-		private: System::Windows::Forms::TextBox^ fldName;
-		private: System::Windows::Forms::TextBox^ fldState;
-		private: System::Windows::Forms::DateTimePicker^ dtpBirthdate;
-		private: System::Windows::Forms::TextBox^ fldCountry;
-		private: System::Windows::Forms::TextBox^ fldUsername;
-		private: System::Windows::Forms::TextBox^ fldPassword;
-		private: System::Windows::Forms::TextBox^ fldMail;
-	private: System::Windows::Forms::Label^ lblName;
-	private: System::Windows::Forms::Label^ lblBirthdate;
-	private: System::Windows::Forms::Label^ lblState;
-	private: System::Windows::Forms::Label^ lblCountry;
-	private: System::Windows::Forms::Label^ lblUsername;
-	private: System::Windows::Forms::Label^ lblPassword;
-	private: System::Windows::Forms::Label^ lblMail;
-
-
-
-
-
-
-
-		private: System::Windows::Forms::Button^ btnCancel;
-		private: System::Windows::Forms::Button^ btnSave;
-		private: System::ComponentModel::IContainer^ components;
+		private: System::Windows::Forms::PictureBox^ imgDecorator;
 		protected:
-
-		protected:
-
-		private:
+			private: System::Windows::Forms::TextBox^ fldName;
+			private: System::Windows::Forms::TextBox^ fldState;
+			private: System::Windows::Forms::DateTimePicker^ dtpBirthdate;
+			private: System::Windows::Forms::TextBox^ fldCountry;
+			private: System::Windows::Forms::TextBox^ fldUsername;
+			private: System::Windows::Forms::TextBox^ fldPassword;
+			private: System::Windows::Forms::TextBox^ fldMail;
+			private: System::Windows::Forms::Label^ lblName;
+			private: System::Windows::Forms::Label^ lblBirthdate;
+			private: System::Windows::Forms::Label^ lblState;
+			private: System::Windows::Forms::Label^ lblCountry;
+			private: System::Windows::Forms::Label^ lblUsername;
+			private: System::Windows::Forms::Label^ lblPassword;
+			private: System::Windows::Forms::Label^ lblMail;
+			private: System::Windows::Forms::Button^ btnCancel;
+			private: System::Windows::Forms::Button^ btnSave;
+			private: System::ComponentModel::IContainer^ components;
+			protected:
+				protected:
+					private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -76,7 +69,7 @@ namespace UserManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AddUserWindow::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(ModifyUserWindow::typeid));
 			this->imgDecorator = (gcnew System::Windows::Forms::PictureBox());
 			this->fldName = (gcnew System::Windows::Forms::TextBox());
 			this->lblName = (gcnew System::Windows::Forms::Label());
@@ -116,7 +109,7 @@ namespace UserManagement {
 			this->fldName->Name = L"fldName";
 			this->fldName->Size = System::Drawing::Size(139, 20);
 			this->fldName->TabIndex = 1;
-			this->fldName->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::fldName_TextChanged);
+			this->fldName->TextChanged += gcnew System::EventHandler(this, &ModifyUserWindow::fldName_TextChanged);
 			// 
 			// lblName
 			// 
@@ -126,7 +119,7 @@ namespace UserManagement {
 			this->lblName->Size = System::Drawing::Size(96, 13);
 			this->lblName->TabIndex = 3;
 			this->lblName->Text = L"Nombre y apellidos";
-			this->lblName->Click += gcnew System::EventHandler(this, &AddUserWindow::label1_Click);
+			this->lblName->Click += gcnew System::EventHandler(this, &ModifyUserWindow::label1_Click);
 			// 
 			// lblBirthdate
 			// 
@@ -153,7 +146,7 @@ namespace UserManagement {
 			this->dtpBirthdate->Name = L"dtpBirthdate";
 			this->dtpBirthdate->Size = System::Drawing::Size(139, 20);
 			this->dtpBirthdate->TabIndex = 2;
-			this->dtpBirthdate->ValueChanged += gcnew System::EventHandler(this, &AddUserWindow::dateTimePicker1_ValueChanged);
+			this->dtpBirthdate->ValueChanged += gcnew System::EventHandler(this, &ModifyUserWindow::dateTimePicker1_ValueChanged);
 			// 
 			// fldState
 			// 
@@ -162,7 +155,7 @@ namespace UserManagement {
 			this->fldState->Name = L"fldState";
 			this->fldState->Size = System::Drawing::Size(139, 20);
 			this->fldState->TabIndex = 3;
-			this->fldState->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::textBox3_TextChanged);
+			this->fldState->TextChanged += gcnew System::EventHandler(this, &ModifyUserWindow::textBox3_TextChanged);
 			// 
 			// lblCountry
 			// 
@@ -172,7 +165,7 @@ namespace UserManagement {
 			this->lblCountry->Size = System::Drawing::Size(29, 13);
 			this->lblCountry->TabIndex = 10;
 			this->lblCountry->Text = L"País";
-			this->lblCountry->Click += gcnew System::EventHandler(this, &AddUserWindow::label4_Click);
+			this->lblCountry->Click += gcnew System::EventHandler(this, &ModifyUserWindow::label4_Click);
 			// 
 			// fldCountry
 			// 
@@ -181,7 +174,7 @@ namespace UserManagement {
 			this->fldCountry->Name = L"fldCountry";
 			this->fldCountry->Size = System::Drawing::Size(139, 20);
 			this->fldCountry->TabIndex = 4;
-			this->fldCountry->TextChanged += gcnew System::EventHandler(this, &AddUserWindow::textBox2_TextChanged);
+			this->fldCountry->TextChanged += gcnew System::EventHandler(this, &ModifyUserWindow::textBox2_TextChanged);
 			// 
 			// lblUsername
 			// 
@@ -242,7 +235,7 @@ namespace UserManagement {
 			this->btnCancel->TabIndex = 9;
 			this->btnCancel->Text = L"Cancelar";
 			this->btnCancel->UseVisualStyleBackColor = true;
-			this->btnCancel->Click += gcnew System::EventHandler(this, &AddUserWindow::button2_Click);
+			this->btnCancel->Click += gcnew System::EventHandler(this, &ModifyUserWindow::button2_Click);
 			// 
 			// btnSave
 			// 
@@ -252,9 +245,9 @@ namespace UserManagement {
 			this->btnSave->TabIndex = 8;
 			this->btnSave->Text = L"Guardar";
 			this->btnSave->UseVisualStyleBackColor = true;
-			this->btnSave->Click += gcnew System::EventHandler(this, &AddUserWindow::btnSave_Click);
+			this->btnSave->Click += gcnew System::EventHandler(this, &ModifyUserWindow::btnSave_Click);
 			// 
-			// AddUserWindow
+			// ModifyUserWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -280,10 +273,10 @@ namespace UserManagement {
 			this->Controls->Add(this->imgDecorator);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MinimumSize = System::Drawing::Size(16, 347);
-			this->Name = L"AddUserWindow";
+			this->Name = L"ModifyUserWindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
-			this->Text = L"Añadir usuario";
-			this->Load += gcnew System::EventHandler(this, &AddUserWindow::LoadTableData);
+			this->Text = L"Modificar usuario";
+			this->Load += gcnew System::EventHandler(this, &ModifyUserWindow::LoadData);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDecorator))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -292,8 +285,15 @@ namespace UserManagement {
 
 #pragma endregion
 
-		private: System::Void LoadTableData(System::Object^ sender, System::EventArgs^ e) {
-			
+		private: System::Void LoadData(System::Object^ sender, System::EventArgs^ e) {
+			array <String^>^ userData = FileFunctions::GetUser(userId);
+			fldName->Text = userData[0];
+			dtpBirthdate->Text = userData[1];
+			fldState->Text = userData[2];
+			fldCountry->Text = userData[3];
+			fldUsername->Text = userData[4];
+			fldPassword->Text = userData[5];
+			fldMail->Text = userData[6];
 		}
 		private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 		}
@@ -311,36 +311,10 @@ namespace UserManagement {
 		private: System::Void fldName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		}
 		private: System::Void btnSave_Click(System::Object^ sender, System::EventArgs^ e) {
-			int actualUsers = FileFunctions::GetTotalOfUsers();
-			int error = FileFunctions::AddUser(fldName->Text, dtpBirthdate->Text, fldState->Text, fldCountry->Text,
-				fldUsername->Text, fldPassword->Text, fldMail->Text, "10");
-
-			switch (error)
-			{
-				case 0:
-					if (actualUsers < FileFunctions::GetTotalOfUsers()) {
-						MessageBox::Show("Usuario añadido con éxito.", "Operación correcta",
-							MessageBoxButtons::OK, MessageBoxIcon::Information);
-						this->Close();
-					}
-					else
-						MessageBox::Show("El usuario no ha sido añadido.", "Error",
-							MessageBoxButtons::OK, MessageBoxIcon::Error);
-					this->Close();
-					break;
-				case 1:
-					MessageBox::Show("Se ha alcanzado el límite de usuarios.",
-						"Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-					break;
-				case 2:
-					MessageBox::Show("El nombre de usuario elegido ya está en uso.", "Advertencia",
-						MessageBoxButtons::OK, MessageBoxIcon::Warning);
-					break;
-				default:
-					break;
-			}
-
-			
+			FileFunctions::ModifyUser(userId, fldName->Text, dtpBirthdate->Text, fldState->Text, fldCountry->Text,
+				fldUsername->Text, fldPassword->Text, fldMail->Text);
+			MessageBox::Show("Usuario modificado.", "Operación correcta", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			this->Close();
 		}
 	};
 }

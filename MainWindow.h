@@ -39,9 +39,6 @@ namespace UserManagement {
 		private: System::Windows::Forms::Button^ btnModify;
 		private: System::Windows::Forms::Button^ btnCredits;
 		private: System::Windows::Forms::DataGridView^ tblUsers;
-
-
-
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmName;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmBirthdate;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmState;
@@ -49,21 +46,13 @@ namespace UserManagement {
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmUsername;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmMail;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmCredits;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ name;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ birthdate;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ state;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ country;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ username;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ mail;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ credits;
-
-
-
-
-
-
-
-
+		private: System::Windows::Forms::DataGridViewTextBoxColumn^ name;
+		private: System::Windows::Forms::DataGridViewTextBoxColumn^ birthdate;
+		private: System::Windows::Forms::DataGridViewTextBoxColumn^ state;
+		private: System::Windows::Forms::DataGridViewTextBoxColumn^ country;
+		private: System::Windows::Forms::DataGridViewTextBoxColumn^ username;
+		private: System::Windows::Forms::DataGridViewTextBoxColumn^ mail;
+		private: System::Windows::Forms::DataGridViewTextBoxColumn^ credits;
 		private: System::ComponentModel::IContainer^ components;
 		protected:
 
@@ -252,6 +241,7 @@ namespace UserManagement {
 		private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 		}
 		private: System::Void LoadData(System::Object^ sender, System::EventArgs^ e) {
+			FileFunctions::ReadFile();
 			LoadTableData();
 		}
 		private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -266,14 +256,34 @@ namespace UserManagement {
 			}
 			else
 			{
-				MessageBox::Show("No hay ningún registro a eliminar.", "Error");
+				MessageBox::Show("No hay ningún registro a eliminar.", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 			}
 		}
 		private: System::Void btnModify_Click(System::Object^ sender, System::EventArgs^ e) {
 			if (tblUsers->Rows->Count > 0)
-				MessageBox::Show(tblUsers->CurrentCell->RowIndex + "");
+			{
+				ModifyUserWindow^ mUW = gcnew ModifyUserWindow();
+				mUW->SetUserId(tblUsers->CurrentCell->RowIndex + 1);
+				mUW->ShowDialog();
+				LoadTableData();
+			}
+			else
+			{
+				MessageBox::Show("No hay ningún registro a modificar.", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+			}
 		}
 		private: System::Void btnCredits_Click(System::Object^ sender, System::EventArgs^ e) {
+			if (tblUsers->Rows->Count > 0)
+			{
+				ModifyCreditsWindow^ mCW = gcnew ModifyCreditsWindow();
+				mCW->SetUserId(tblUsers->CurrentCell->RowIndex + 1);
+				mCW->ShowDialog();
+				LoadTableData();
+			}
+			else
+			{
+				MessageBox::Show("No hay ningún registro a modificar.", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+			}
 		}
 		private: System::Void tblUsers_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		}

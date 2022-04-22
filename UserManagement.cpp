@@ -2,8 +2,10 @@
 
 using namespace System;
 
-#include "Functions.cpp"
+#include "FileFunctions.cpp"
 #include "AddUserWindow.h"
+#include "ModifyUserWindow.h"
+#include "ModifyCreditsWindow.h"
 #include "MainWindow.h"
 
 using namespace System::Windows::Forms;
