@@ -46,13 +46,21 @@ namespace UserManagement {
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmUsername;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmMail;
 		private: System::Windows::Forms::DataGridViewTextBoxColumn^ clmCredits;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ name;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ birthdate;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ state;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ country;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ username;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ mail;
-		private: System::Windows::Forms::DataGridViewTextBoxColumn^ credits;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ name;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ birthdate;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ state;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ country;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ username;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ mail;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ credits;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ score;
+
+
+
+
+
+
+
 		private: System::ComponentModel::IContainer^ components;
 		protected:
 
@@ -85,6 +93,7 @@ namespace UserManagement {
 			this->username = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->mail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->credits = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->score = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->logoGravitar))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tblUsers))->BeginInit();
 			this->SuspendLayout();
@@ -153,9 +162,9 @@ namespace UserManagement {
 			this->tblUsers->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->tblUsers->BackgroundColor = System::Drawing::Color::Gainsboro;
 			this->tblUsers->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->tblUsers->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
+			this->tblUsers->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->name, this->birthdate,
-					this->state, this->country, this->username, this->mail, this->credits
+					this->state, this->country, this->username, this->mail, this->credits, this->score
 			});
 			this->tblUsers->Location = System::Drawing::Point(12, 85);
 			this->tblUsers->Name = L"tblUsers";
@@ -212,6 +221,12 @@ namespace UserManagement {
 			this->credits->Name = L"credits";
 			this->credits->ReadOnly = true;
 			this->credits->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::NotSortable;
+			// 
+			// score
+			// 
+			this->score->HeaderText = L"Puntuacion";
+			this->score->Name = L"score";
+			this->score->ReadOnly = true;
 			// 
 			// MainWindow
 			// 

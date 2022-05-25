@@ -53,7 +53,10 @@ namespace UserManagement {
 			private: System::Windows::Forms::Label^ lblMail;
 			private: System::Windows::Forms::Button^ btnCancel;
 			private: System::Windows::Forms::Button^ btnSave;
-			private: System::ComponentModel::IContainer^ components;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::TextBox^ fldScore;
+
+	private: System::ComponentModel::IContainer^ components;
 			protected:
 				protected:
 					private:
@@ -87,6 +90,8 @@ namespace UserManagement {
 			this->fldMail = (gcnew System::Windows::Forms::TextBox());
 			this->btnCancel = (gcnew System::Windows::Forms::Button());
 			this->btnSave = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->fldScore = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDecorator))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -247,6 +252,25 @@ namespace UserManagement {
 			this->btnSave->UseVisualStyleBackColor = true;
 			this->btnSave->Click += gcnew System::EventHandler(this, &ModifyUserWindow::btnSave_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(285, 197);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(61, 13);
+			this->label1->TabIndex = 18;
+			this->label1->Text = L"Puntuación";
+			this->label1->Click += gcnew System::EventHandler(this, &ModifyUserWindow::label1_Click_1);
+			// 
+			// fldScore
+			// 
+			this->fldScore->Location = System::Drawing::Point(397, 194);
+			this->fldScore->MaxLength = 49;
+			this->fldScore->Name = L"fldScore";
+			this->fldScore->Size = System::Drawing::Size(139, 20);
+			this->fldScore->TabIndex = 17;
+			this->fldScore->TextChanged += gcnew System::EventHandler(this, &ModifyUserWindow::textBox1_TextChanged);
+			// 
 			// ModifyUserWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -254,6 +278,8 @@ namespace UserManagement {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(249)), static_cast<System::Int32>(static_cast<System::Byte>(249)),
 				static_cast<System::Int32>(static_cast<System::Byte>(249)));
 			this->ClientSize = System::Drawing::Size(548, 308);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->fldScore);
 			this->Controls->Add(this->btnSave);
 			this->Controls->Add(this->btnCancel);
 			this->Controls->Add(this->lblMail);
@@ -295,6 +321,7 @@ namespace UserManagement {
 			fldUsername->Text = userData[4];
 			fldPassword->Text = userData[5];
 			fldMail->Text = userData[6];
+			fldScore->Text = userData[8];
 		}
 		private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 		}
@@ -313,9 +340,13 @@ namespace UserManagement {
 		}
 		private: System::Void btnSave_Click(System::Object^ sender, System::EventArgs^ e) {
 			FileFunctions::ModifyUser(userId, fldName->Text, dtpBirthdate->Text, fldState->Text, fldCountry->Text,
-				fldUsername->Text, fldPassword->Text, fldMail->Text);
+				fldUsername->Text, fldPassword->Text, fldMail->Text, fldScore->Text);
 			MessageBox::Show("Usuario modificado.", "Operación correcta", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			this->Close();
 		}
-	};
+		private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+			}
+		};
 }

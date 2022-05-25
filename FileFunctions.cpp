@@ -19,6 +19,7 @@ namespace FileFunctions {
         char password[50];
         char mail[50];
         char credits[5];
+        char score[5];
     };
 
     void MakeFile()
@@ -128,6 +129,7 @@ namespace FileFunctions {
             strcpy(newContact.password, password);
             strcpy(newContact.mail, mail);
             strcpy(newContact.credits, credits);
+            strcpy(newContact.score, "0");
 
             f = fopen(FILENAME, "ab");
             fwrite(&newContact, sizeof(newContact), 1, f);
@@ -206,7 +208,7 @@ namespace FileFunctions {
     }
 
     void ModifyUser(int id, char* name, char* birthdate, char* state,
-        char* country, char* username, char* password, char* mail)
+        char* country, char* username, char* password, char* mail, char* score)
     {
         FILE* f, * tmp;
         User valor, lista[999];
@@ -233,6 +235,7 @@ namespace FileFunctions {
                     strcpy(valor.username, username);
                     strcpy(valor.password, password);
                     strcpy(valor.mail, mail);
+                    strcpy(valor.score, score);
 
                     lista[c] = valor;
                     c++;
@@ -262,7 +265,7 @@ namespace FileFunctions {
     }
 
     void ModifyUser(int id, String^ name, String^ birthdate, String^ state,
-        String^ country, String^ username, String^ password, String^ mail)
+        String^ country, String^ username, String^ password, String^ mail, String^ score)
     {
         char* nameC = (char*)Marshal::StringToHGlobalAnsi(name).ToPointer();
         char* birthdateC = (char*)Marshal::StringToHGlobalAnsi(birthdate).ToPointer();
@@ -271,8 +274,9 @@ namespace FileFunctions {
         char* usernameC = (char*)Marshal::StringToHGlobalAnsi(username).ToPointer();
         char* passwordC = (char*)Marshal::StringToHGlobalAnsi(password).ToPointer();
         char* mailC = (char*)Marshal::StringToHGlobalAnsi(mail).ToPointer();
+        char* scoreC = (char*)Marshal::StringToHGlobalAnsi(score).ToPointer();
 
-        ModifyUser(id, nameC, birthdateC, stateC, countryC, usernameC, passwordC, mailC);
+        ModifyUser(id, nameC, birthdateC, stateC, countryC, usernameC, passwordC, mailC, scoreC);
 
         Marshal::FreeHGlobal((IntPtr)nameC);
         Marshal::FreeHGlobal((IntPtr)birthdateC);
@@ -281,6 +285,7 @@ namespace FileFunctions {
         Marshal::FreeHGlobal((IntPtr)usernameC);
         Marshal::FreeHGlobal((IntPtr)passwordC);
         Marshal::FreeHGlobal((IntPtr)mailC);
+        Marshal::FreeHGlobal((IntPtr)scoreC);
     }
 
     void ModifyCredits(int id, char* credits)
@@ -360,6 +365,7 @@ namespace FileFunctions {
             String^ password;
             String^ mail;
             String^ credits;
+            String^ score;
 
             while (fread(&value, sizeof(value), 1, f) && c <= id)
             {
@@ -373,9 +379,10 @@ namespace FileFunctions {
                     password = gcnew String(value.password);
                     mail = gcnew String(value.mail);
                     credits = gcnew String(value.credits);
+                    score = gcnew String(value.score);
 
                     user = gcnew array<String^>{name, birthdate, state,
-                        country, username, password, mail, credits};
+                        country, username, password, mail, credits, score};
                 }
 
                 c++;
@@ -409,6 +416,7 @@ namespace FileFunctions {
             String^ username;
             String^ mail;
             String^ credits;
+            String^ score;
 
             while (fread(&value, sizeof(value), 1, f))
             {
@@ -419,10 +427,11 @@ namespace FileFunctions {
                 username = gcnew String(value.username);
                 mail = gcnew String(value.mail);
                 credits = gcnew String(value.credits);
+                score = gcnew String(value.score);
 
                 userList[numberOfUsers - positionOffset] = 
                     gcnew array<String^>{name, birthdate, state, 
-                    country, username, mail, credits};
+                    country, username, mail, credits, score};
                 positionOffset--;
             }
 
